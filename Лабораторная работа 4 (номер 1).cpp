@@ -18,7 +18,7 @@ using std::cout;
 using std::string;
 
 double checkX(string x);  // Проверка введенного аргумента синуса
-int checkN(string n); // Проверка введеного кол-ва переменных
+int checkN(string n); // Проверка введеного кол-ва слагаемых
 double checkE(string e); // Проверка введённой точности
 double sumN(double x, int n, double& last); // Вычис-ние част-ой суммы ряда с данным кол-вом слагаемых
 double sumE(double x, double e, int& n); // Вычис-ние част-ой суммы ряда с данной точностью
@@ -252,7 +252,7 @@ double sumE(double x, double e, int& n)
 
 	/* Повторяется, начиная с 2-х, потому что
 	для 1-го члена идёт обращение к 0-му, которого не сущ-ет */
-	for (int n = 2; fabs(last) > e; n++)
+	for (n = 2; fabs(last) > e; n++)
 	{
 		last *= -x * x / (2 * n - 1) / (2 * n - 2); // То, как получила формулу, приложено в png
 		Sn += last; // Увеличиваем част-ю сумму ряда, прибавляя каждое новое слаг-ое
